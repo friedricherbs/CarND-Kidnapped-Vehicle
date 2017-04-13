@@ -65,7 +65,7 @@ inline double * getError(double gt_x, double gt_y, double gt_theta, double pf_x,
  * @param filename Name of file containing map data.
  * @output True if opening and reading file was successful
  */
-inline bool read_map_data(std::string filename, Map& map) {
+inline bool read_map_data(const std::string& filename, Map& map) {
 
 	// Get file of map:
 	std::ifstream in_file_map(filename.c_str(),std::ifstream::in);
@@ -109,7 +109,7 @@ inline bool read_map_data(std::string filename, Map& map) {
  * @param filename Name of file containing control measurements.
  * @output True if opening and reading file was successful
  */
-inline bool read_control_data(std::string filename, std::vector<control_s>& position_meas) {
+inline bool read_control_data(const std::string& filename, std::vector<control_s>& position_meas) {
 
 	// Get file of position measurements:
 	std::ifstream in_file_pos(filename.c_str(),std::ifstream::in);
@@ -152,7 +152,7 @@ inline bool read_control_data(std::string filename, std::vector<control_s>& posi
  * @param filename Name of file containing ground truth.
  * @output True if opening and reading file was successful
  */
-inline bool read_gt_data(std::string filename, std::vector<ground_truth>& gt) {
+inline bool read_gt_data(const std::string& filename, std::vector<ground_truth>& gt) {
 
 	// Get file of position measurements:
 	std::ifstream in_file_pos(filename.c_str(),std::ifstream::in);
@@ -195,7 +195,7 @@ inline bool read_gt_data(std::string filename, std::vector<ground_truth>& gt) {
  * @param filename Name of file containing landmark observation measurements.
  * @output True if opening and reading file was successful
  */
-inline bool read_landmark_data(std::string filename, std::vector<LandmarkObs>& observations) {
+inline bool read_landmark_data(const std::string& filename, std::vector<LandmarkObs>& observations) {
 
 	// Get file of landmark measurements:
 	std::ifstream in_file_obs(filename.c_str(),std::ifstream::in);
