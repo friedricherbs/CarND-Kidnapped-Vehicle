@@ -15,7 +15,7 @@
 
 using namespace std;
 
-#define USE_ABS_PATH 1
+#define USE_ABS_PATH 0
 
 
 
