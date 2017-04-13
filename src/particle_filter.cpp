@@ -189,6 +189,7 @@ void ParticleFilter::resample() {
 	// NOTE: You may find std::discrete_distribution helpful here.
 	//   http://en.cppreference.com/w/cpp/numeric/random/discrete_distribution
 #if 0
+    // Does not compile in VS due to missing constructor!
     std::default_random_engine gen;
     // Create uniform distribution from 0 ... 1
     std::discrete_distribution<int> dist(weights.cbegin(), weights.cend());
@@ -220,7 +221,7 @@ void ParticleFilter::resample() {
     particles = new_particles;  
 }
 
-void ParticleFilter::write(std::string filename) {
+void ParticleFilter::write(std::string filename) const {
 	// You don't need to modify this file.
 	std::ofstream dataFile;
 	dataFile.open(filename, std::ios::app);
